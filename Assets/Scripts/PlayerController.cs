@@ -18,6 +18,7 @@ public class PlayerController : MonoBehaviour
         Vector3 mousePos = Input.mousePosition;
         mousePos.z = ZDEPTH;
         mousePos = Camera.main.ScreenToWorldPoint(mousePos);
+        mousePos.z += 10;
         transform.position = mousePos;
     }
 }

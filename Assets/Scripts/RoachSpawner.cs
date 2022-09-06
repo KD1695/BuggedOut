@@ -9,6 +9,7 @@ public class RoachSpawner : MonoBehaviour
 
     [SerializeField] private float spawnInterval = 2.0f;
     [SerializeField] private float baseSpeed = 5.0f;
+    [SerializeField] private float baseDamageScale = 20.0f;
     [SerializeField] private RoachController roachPrefab;
 
     private float currentTime = 0.0f;
@@ -48,7 +49,7 @@ public class RoachSpawner : MonoBehaviour
                     break;
             }
             var obj = GameObject.Instantiate<RoachController>(roachPrefab, new Vector3(x, y, 150f), Quaternion.identity, this.transform);
-            obj.SetSpeed(baseSpeed);
+            obj.SetValues(baseSpeed, baseDamageScale);
             currentTime = 0;
         }
     }

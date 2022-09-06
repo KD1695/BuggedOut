@@ -5,16 +5,18 @@ using UnityEngine;
 public class RoachController : MonoBehaviour
 {
     private float speed = 5.0f;
+    private float health = 100f;
+    private float damageScale = 20f;
     private Vector3 destination;
     private bool isDestinationSet = false;
     private bool isRotated = false;
-
     const int BOUNDS_X = 1920;
     const int BOUNDS_Y = 1080;
 
-    public void SetSpeed(float _speed)
+    public void SetValues(float _speed, float _damageScale)
     {
         speed = _speed;
+        damageScale = _damageScale;
     }
 
     // Start is called before the first frame update
@@ -26,6 +28,11 @@ public class RoachController : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
+        if(health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
         if(!isDestinationSet)
         {
             //set new destination
@@ -51,6 +58,15 @@ public class RoachController : MonoBehaviour
                 isDestinationSet = false;
                 isRotated = false;
             }
+        }
+    }
+
+    private void OnTriggerStay(Collider other)
+    {
+        //Damage received when click down(spraying)
+        if(Input.GetMouseButton(0))
+        {
+            health -= Time.deltaTime * damageScale;
         }
     }
 }
