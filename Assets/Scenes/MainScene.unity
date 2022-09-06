@@ -480,8 +480,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spawnInterval: 2
-  baseSpeed: 5
-  baseDamageScale: 20
+  baseSpeed: 20
+  baseDamageScale: 200
   roachPrefab: {fileID: 8271663119146267721, guid: fe15feda2fab3d34ab2e1988170a6bbb, type: 3}
 --- !u!224 &1226556448
 RectTransform:
