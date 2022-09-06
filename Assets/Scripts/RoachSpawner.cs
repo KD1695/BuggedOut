@@ -9,8 +9,6 @@ public class RoachSpawner : MonoBehaviour
     const int BOUNDS_Y = 1080;
 
     [SerializeField] private float spawnInterval = 6.0f;
-    [SerializeField] private float baseSpeed = 50.0f;
-    [SerializeField] private float baseDamageScale = 200.0f;
     [SerializeField] private List<RoachController> roachPrefabList;
 
     private float currentTime = 0.0f;

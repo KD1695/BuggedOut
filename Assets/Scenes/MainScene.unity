@@ -244,7 +244,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 91.38208, w: 0}
+  m_margin: {x: 0, y: 0, z: 20.131653, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0
@@ -411,7 +411,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
-  m_AnchoredPosition: {x: 128, y: -30}
+  m_AnchoredPosition: {x: 222, y: -30}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0, y: 1}
 --- !u!114 &525934822
@@ -795,9 +795,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 33be7ecbb4f72d84b98b2cefc97c252d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnInterval: 2
-  baseSpeed: 40
-  baseDamageScale: 200
+  spawnInterval: 1
   roachPrefabList:
   - {fileID: 8271663119146267721, guid: fe15feda2fab3d34ab2e1988170a6bbb, type: 3}
   - {fileID: 8271663119146267721, guid: 97418632929008345b6bc7c5ff683177, type: 3}
