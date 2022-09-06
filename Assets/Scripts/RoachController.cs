@@ -4,20 +4,15 @@ using UnityEngine;
 
 public class RoachController : MonoBehaviour
 {
-    private float speed = 5.0f;
-    private float health = 100f;
-    private float damageScale = 20f;
+    [SerializeField] private float speed = 40.0f;
+    [SerializeField] private float damageScale = 200f;
+    [SerializeField] private float health = 100f;
+    [SerializeField] private int scoreGain = 10;
     private Vector3 destination;
     private bool isDestinationSet = false;
     private bool isRotated = false;
     const int BOUNDS_X = 1920;
     const int BOUNDS_Y = 1080;
-
-    public void SetValues(float _speed, float _damageScale)
-    {
-        speed = _speed;
-        damageScale = _damageScale;
-    }
 
     // Start is called before the first frame update
     void Start()
@@ -30,6 +25,7 @@ public class RoachController : MonoBehaviour
     {
         if(health <= 0)
         {
+            UIManager.Instance.AddScore(scoreGain);
             Destroy(this.gameObject);
         }
 

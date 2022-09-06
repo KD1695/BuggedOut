@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using System.Linq;
 
 public class RoachSpawner : MonoBehaviour
 {
@@ -10,7 +11,7 @@ public class RoachSpawner : MonoBehaviour
     [SerializeField] private float spawnInterval = 6.0f;
     [SerializeField] private float baseSpeed = 50.0f;
     [SerializeField] private float baseDamageScale = 200.0f;
-    [SerializeField] private RoachController roachPrefab;
+    [SerializeField] private List<RoachController> roachPrefabList;
 
     private float currentTime = 0.0f;
 
@@ -48,8 +49,9 @@ public class RoachSpawner : MonoBehaviour
                     x = Random.Range(-BOUNDS_X / 20, BOUNDS_X / 20);
                     break;
             }
-            var obj = GameObject.Instantiate<RoachController>(roachPrefab, new Vector3(x, y, 150f), Quaternion.identity, this.transform);
-            obj.SetValues(baseSpeed, baseDamageScale);
+            //can expand to instantiate each type based on some logic instead of random selection
+            int index = Random.Range(0, roachPrefabList.Count);
+            GameObject.Instantiate<RoachController>(roachPrefabList[index], new Vector3(x, y, 150f), Quaternion.identity, this.transform);
             currentTime = 0;
         }
     }
